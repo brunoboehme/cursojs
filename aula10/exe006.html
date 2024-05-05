@@ -20,15 +20,35 @@
         div#area:hover {
             background-color: rgb(43, 228, 43);
             border: 2px solid rgb(31, 163, 31);
-            
+            box-sizing: border-box;
+            transition: 0.3s;
+            cursor: pointer;
         }
         
     </style>
 </head>
 
 <body>
-    <div id = "area">
+    <div id = "area" ><!--Eventos podem ser colocados no html ou no javascirpt-->
         Interaja...
     </div>
+    <script>
+        var area = document.getElementById('area') //Se a var estiver dentro de uma function só vai servir para aquela function, por isso esta var esta fora
+        area.addEventListener ('click', clicar)
+        area.addEventListener ('mouseenter', entrar)
+        area.addEventListener ('mouseout', sair)
+        function clicar() {
+            area.innerText = 'Clicou!'
+            area.style.background = 'red'
+        }
+        function entrar() {
+            area.innerText = 'Entrou!'
+        }
+        function sair() {
+            area.innerText = 'Saiu!'
+            area.style.background = 'rgb(31, 163, 31)'
+        }
+        /* Caso não rode o código, abrir o devtools no chrome, vai aparecer erro em algum lugar da tela*/
+    </script>
 </body>
 </html>
